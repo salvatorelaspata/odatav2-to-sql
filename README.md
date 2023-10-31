@@ -6,8 +6,9 @@ This repo contains a simple tool to convert OData V2 metadata to SQL DDL stateme
 
 ## Docs
 
-[oData v2](https://www.odata.org/documentation/odata-version-2-0/)
-[SQL Where W3](https://www.w3schools.com/sql/sql_where.asp)
+- [oData v2](https://www.odata.org/documentation/odata-version-2-0/)
+
+- [SQL Where W3](https://www.w3schools.com/sql/sql_where.asp)
 
 ## Usage
 

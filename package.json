@@ -1,6 +1,10 @@
 {
   "name": "odatav2-to-sql",
-  "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/salvatorelaspata/odatav2-to-sql",
+    "type": "github"
+  },
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
