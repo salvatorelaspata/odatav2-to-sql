@@ -35,7 +35,7 @@ test('test $filter', () => {
         value: "STATUS"
       }
     ],
-    whereClausole: `logstart = 'TEST' AND logend = 'TEST2' AND packagename = 'TEST2' AND integrationflowname = 'TEST2' AND status = 'STATUS'`,
+    whereClausole: `WHERE logstart = 'TEST' AND logend = 'TEST2' AND packagename = 'TEST2' AND integrationflowname = 'TEST2' AND status = 'STATUS'`,
     selectFields: [],
     selectClausole: '',
     format: '',
@@ -71,7 +71,7 @@ test('test complex odata', () => {
         value: "Berlin"
       }
     ],
-    whereClausole: "Country = 'Germany' AND City = 'Berlin'",
+    whereClausole: "WHERE Country = 'Germany' AND City = 'Berlin'",
     selectFields: [
       "CustomerID",
       "CompanyName",

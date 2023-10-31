@@ -23,7 +23,8 @@ const _createWhereClausole = (whereConditions) => {
     const { field, operator, value } = condition;
     whereClausole.push(`${field} ${_transcodeOperator(operator)} '${value}'`);
   });
-  return whereClausole.join(' AND ');
+  if (whereClausole.length === 0) return '';
+  return 'WHERE ' + whereClausole.join(' AND ');
 };
 
 const parseODataV2Url = (_url) => {
@@ -35,7 +36,6 @@ const parseODataV2Url = (_url) => {
   let selectFields = [];
 
   const config = { top: '', skip: '', orderby: '', format: '', inlinecount: '' };
-
 
   queryParams.forEach((param) => {
     const [key, value] = param.split('=');
@@ -70,7 +70,3 @@ const parseODataV2Url = (_url) => {
 };
 
 module.exports = parseODataV2Url;
-
-const _url = `http://services.odata.org/V2/Northwind/Northwind.svc/Customers?$filter=Country eq 'Germany' and City eq 'Berlin'&$orderby=Country desc, City asc&$skip=0&$top=10&$select=CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax&$inlinecount=allpages&$format=json`
-
-console.log(JSON.stringify(parseODataV2Url(_url), null, 2))
