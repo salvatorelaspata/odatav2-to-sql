@@ -54,7 +54,7 @@ const parseODataV2Url = (_url) => {
         });
       });
     } else if (key === '$select') {
-      selectFields = SELECTvalue.split(',');
+      selectFields = value.split(',');
     } else if (key === '$top' || key === '$skip' || key === '$orderby' || key === '$format' || key === '$inlinecount') {
       config[key.substring(1)] = value;
     }
@@ -64,11 +64,9 @@ const parseODataV2Url = (_url) => {
     whereConditions,
     whereClausole: _createWhereClausole(whereConditions),
     selectFields,
-    selectClausole: selectFields.length > 0 ? `SELECT selectFields.join(',')` : 'SELECT *',
+    selectClausole: selectFields.length > 0 ? `SELECT ${selectFields.join(',')}` : 'SELECT *',
     ...config
   };
 };
 
 module.exports = parseODataV2Url;
-
-console.log(parseODataV2Url('http://services.odata.org/V2/Northwind/Northwind.svc/Customers?$filter=Country eq \'Germany\' and City eq \'Berlin\'&$orderby=Country desc, City asc&$skip=0&$top=10&$select=CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax&$inlinecount=allpages&$format=json'));

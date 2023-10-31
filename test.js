@@ -37,12 +37,10 @@ test('test $filter', () => {
     ],
     whereClausole: `WHERE logstart = 'TEST' AND logend = 'TEST2' AND packagename = 'TEST2' AND integrationflowname = 'TEST2' AND status = 'STATUS'`,
     selectFields: [],
-    selectClausole: '',
+    selectClausole: 'SELECT *',
     format: '',
     inlinecount: '',
     orderby: '',
-    selectClausole: '',
-    selectFields: [],
     skip: '',
     top: '',
   });
@@ -85,7 +83,7 @@ test('test complex odata', () => {
       "Phone",
       "Fax"
     ],
-    selectClausole: "CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax",
+    selectClausole: "SELECT CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax",
     top: "10",
     skip: "0",
     orderby: "Country desc, City asc",

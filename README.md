@@ -27,8 +27,25 @@ const sql = parseODataV2Url(_url);
 console.log(sql);
 ```
 
+## Return Type
+  
+  ```typescript
+  {
+    whereConditions:{ field: string, operator: string, value: string }[],
+    whereClausole: string // string contains "WHERE "
+    selectFields: string[], 
+    selectClausole: string, // string contains "SELECT "
+    top: string,
+    skip: string,
+    orderby: string,
+    format: string,
+    inlinecount: string
+  }
+  ```
+
 ## TODO
 
 - [ ] Add 'or' condition support
 - [ ] Add type support (currently only string is supported)
 - [ ] Add support for `$expand`
+- [ ] Define Where SQL with params array to prevent SQL injection

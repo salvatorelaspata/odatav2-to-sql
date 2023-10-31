@@ -4,7 +4,7 @@
     "url": "https://github.com/salvatorelaspata/odatav2-to-sql",
     "type": "github"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "ODava v2 url converter to SQL query",
   "main": "index.js",
   "scripts": {
