@@ -96,7 +96,4 @@ test('test complex odata', () => {
   assert.strictEqual(result.mock.calls.length, 1);
   // Reset the globally tracked mocks.
   mock.reset();
-})
-
-test('test Northwind', () => {
-  const url = `http://services.odata.org/V2/Northwind/Northwind.svc/Customers?$filter=Country eq 'Germany' and City eq 'Berlin'&$orderby=Country desc, City asc&$skip=0&$top=10&$select=CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax&$inlinecount=allpages&$format=json`;
+});
